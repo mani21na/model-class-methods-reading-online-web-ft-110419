@@ -1,5 +1,7 @@
 <% if !params[:author].blank? %>
   <% @posts = Post.where(author: params[:author]) %>
+  <%= select_tag "date", options_for_select(["Today", "Old News"]), include_blank: true %>
+  <%= submit_tag "Filter" %>
 <% end %>
 
 <h1>Believe It Or Not I'm Blogging On Air</h1>
